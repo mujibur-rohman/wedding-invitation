@@ -11,7 +11,7 @@ import Song from "@/components/song";
 import { Suspense } from "react";
 
 export const metadata = {
-  metadataBase: process.env.NEXT_PUBLIC_APP_URL,
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://localhost:3000"),
   alternates: {
     canonical: "/",
   },
@@ -21,22 +21,31 @@ export const metadata = {
   },
   title: `The Wedding Of Dwi & Said Agil`,
   description: `Minggu, 25 Januari 2026, Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami.`,
-  authors: `mujay`,
+  authors: [{ name: "mujay" }],
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: `The Wedding Of Dwi & Said Agil`,
     description: `Minggu, 25 Januari 2026, Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami.`,
-    url: process.env.NEXT_PUBLIC_APP_URL,
-    siteName: `dwi-and-said-agil`,
+    url: "/",
+    siteName: `The Wedding Of Dwi & Said Agil`,
     locale: "id_ID",
-    type: "article",
+    type: "website",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_APP_URL}/thumbnail-150x150.jpg`,
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Wedding Of Dwi & Said Agil",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `The Wedding Of Dwi & Said Agil`,
+    description: `Minggu, 25 Januari 2026, Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami.`,
+    images: ["/og-image.jpg"],
   },
 };
 
