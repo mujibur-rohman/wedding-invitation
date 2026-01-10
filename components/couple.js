@@ -67,14 +67,14 @@ function Couple({ coupleData }) {
                             bapak {item.father_name} dan ibu {item.mother_name}
                           </p>
                         </div>
-                        <Link
+                        {/* <Link
                           data-aos="fade-down"
                           data-aos-delay={(idx + 1) * 200}
                           className="block mx-auto text-2xl text-gray-500 transition duration-300 hover:text-gray-400 active:scale-110 w-fit"
                           href={item.instagram}
                         >
                           <PiInstagramLogo />
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
                     {idx == 0 ? (

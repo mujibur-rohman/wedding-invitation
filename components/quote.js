@@ -2,145 +2,289 @@
 
 import React from "react";
 import { useThemeContext } from "./providers";
+import Image from "next/image";
 
-export default function Quote({
-  shortNameFemale,
-  shortNameMale,
-  quote,
-  quoteFrom,
-}) {
+export default function Quote({ quote, quoteFrom }) {
   const { data } = useThemeContext();
+
+  // Heart SVG component for reusability
+  const HeartIcon = ({ className = "", size = 24 }) => (
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+    </svg>
+  );
+
+  // Decorative flower/leaf SVG
+  const FloralDecor = ({ className = "", flip = false }) => (
+    <svg
+      className={`${className} ${flip ? "scale-x-[-1]" : ""}`}
+      width="120"
+      height="120"
+      viewBox="0 0 100 100"
+      fill="none"
+    >
+      <path
+        d="M50 10C50 10 30 30 30 50C30 70 50 90 50 90C50 90 70 70 70 50C70 30 50 10 50 10Z"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <path
+        d="M10 50C10 50 30 30 50 30C70 30 90 50 90 50C90 50 70 70 50 70C30 70 10 50 10 50Z"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle cx="50" cy="50" r="8" fill="currentColor" fillOpacity="0.2" />
+    </svg>
+  );
+
   return (
     <>
       {data.isOpenned ? (
-        <section id="quote" className="relative text-center">
-          <img
-            className="absolute inset-0 z-0 w-full"
-            src="/img/img-tree-shadow.png"
-            alt=""
-          />
-          <section className="bg-white-black text-center relative bg-cover bg-center">
-            <h2 className="font-arabic py-4 m-0 text-[2rem]">
-              بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
-            </h2>
-            <h2 className="font-esthetic py-4 m-0 text-[2rem]">
-              Assalamualaikum Warahmatullahi Wabarakatuh
-            </h2>
-            <p className="pb-4 px-2 m-0 text-[0.95rem]">
-              Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan
-              menghadiri acara pernikahan kami:
-            </p>
+        <section
+          id="quote"
+          className="relative overflow-hidden bg-gradient-to-b from-stone-50 via-white to-stone-50"
+        >
+          {/* Background decorative elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Gradient blobs */}
+            <div className="absolute top-0 left-0 w-72 h-72 bg-rose-100 rounded-full blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute top-1/4 right-0 w-64 h-64 bg-amber-100 rounded-full blur-3xl opacity-30 translate-x-1/2" />
+            <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-pink-100 rounded-full blur-3xl opacity-20" />
+            <div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-rose-50 rounded-full blur-3xl opacity-40" />
 
-            <div className="overflow-x-hidden pb-4">
-              <div className="relative">
-                <div className="absolute top-0 right-[5%]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    fill="currentColor"
-                    className="opacity-50"
-                    data-time="500"
-                    data-class="animate-love"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                  </svg>
-                </div>
+            {/* Decorative florals */}
+            <div className="absolute top-10 left-10 text-rose-200 opacity-50">
+              <FloralDecor />
+            </div>
+            <div className="absolute top-10 right-10 text-amber-200 opacity-50">
+              <FloralDecor flip />
+            </div>
+            <div className="absolute bottom-10 left-10 text-pink-200 opacity-50 rotate-45">
+              <FloralDecor />
+            </div>
+            <div className="absolute bottom-10 right-10 text-rose-200 opacity-50 -rotate-45">
+              <FloralDecor flip />
+            </div>
 
-                <div
-                  data-aos="fade-right"
-                  data-aos-duration="2000"
-                  className="pb-1"
-                >
-                  <img
-                    src="/img/gallery-2.jpeg"
-                    alt="mempelai wanita"
-                    className="w-40 h-40 object-cover rounded-full border-[3px] border-white shadow my-4 mx-auto cursor-pointer"
-                  />
-                  <h2 className="font-esthetic m-0 text-[2.125rem]">
-                    Dwi Hasti Oktaviani, S.Pd
-                  </h2>
-                  <p className="mt-3 mb-1 text-[1.25rem]">Binti</p>
-                  <p className="mb-0 text-[0.95rem]">Bapak Nurhasan</p>
-                  <p className="mb-0 text-[0.95rem]">dan</p>
-                  <p className="mb-0 text-[0.95rem]">Sri Maryati</p>
-                </div>
+            {/* Floating hearts */}
+            <HeartIcon
+              className="absolute top-[15%] left-[10%] text-rose-200 opacity-40 animate-pulse"
+              size={20}
+            />
+            <HeartIcon
+              className="absolute top-[25%] right-[15%] text-pink-200 opacity-30 animate-pulse"
+              size={16}
+            />
+            <HeartIcon
+              className="absolute top-[60%] left-[8%] text-rose-200 opacity-30 animate-pulse"
+              size={14}
+            />
+            <HeartIcon
+              className="absolute top-[70%] right-[10%] text-amber-200 opacity-40 animate-pulse"
+              size={18}
+            />
+            <HeartIcon
+              className="absolute bottom-[20%] left-[20%] text-pink-200 opacity-30 animate-pulse"
+              size={12}
+            />
+          </div>
 
-                <div className="absolute top-[90%] left-[5%]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    fill="currentColor"
-                    className="opacity-50"
-                    data-time="2000"
-                    data-class="animate-love"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                  </svg>
-                </div>
+          <div className="relative z-10 py-16 px-4">
+            {/* Bismillah Section */}
+            <div className="text-center mb-12" data-aos="fade-down" data-aos-duration="1000">
+              <div className="inline-flex items-center justify-center gap-3 mb-6">
+                <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-stone-300 to-stone-400" />
+                <HeartIcon className="text-rose-400" size={20} />
+                <div className="w-16 h-[1px] bg-gradient-to-l from-transparent via-stone-300 to-stone-400" />
               </div>
 
-              <h2 className="font-esthetic mt-4 text-[4.5rem]">&amp;</h2>
+              <h2 className="font-arabic text-2xl md:text-3xl text-stone-700 mb-4 leading-relaxed">
+                بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+              </h2>
 
-              <div className="relative">
-                <div className="absolute top-0 right-[5%]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    fill="currentColor"
-                    className="opacity-50"
-                    data-time="3000"
-                    data-class="animate-love"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                  </svg>
+              <h3 className="font-esthetic text-2xl md:text-3xl text-stone-600 mb-6">
+                Assalamualaikum Warahmatullahi Wabarakatuh
+              </h3>
+
+              <p className="text-stone-500 max-w-lg mx-auto leading-relaxed">
+                Tanpa mengurangi rasa hormat, kami mengundang Anda untuk
+                berkenan menghadiri acara pernikahan kami:
+              </p>
+            </div>
+
+            {/* Couple Section */}
+            <div className="max-w-4xl mx-auto">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                {/* Bride */}
+                <div
+                  className="flex-1 text-center"
+                  data-aos="fade-right"
+                  data-aos-duration="1500"
+                >
+                  <div className="relative inline-block mb-6">
+                    {/* Decorative ring */}
+                    <div className="absolute inset-0 rounded-full border-2 border-dashed border-rose-200 animate-spin-slow" style={{ animationDuration: '20s' }} />
+                    <div className="absolute -inset-3 rounded-full border border-rose-100" />
+                    <div className="absolute -inset-6 rounded-full border border-rose-50" />
+
+                    {/* Photo */}
+                    <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-white shadow-xl shadow-rose-100/50">
+                      <Image
+                        src="/img/gallery-2.jpeg"
+                        alt="Mempelai Wanita"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Corner hearts */}
+                    <div className="absolute -top-2 -right-2 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full p-2 shadow-lg">
+                      <HeartIcon className="text-white" size={16} />
+                    </div>
+                  </div>
+
+                  <h2 className="font-esthetic text-3xl md:text-4xl text-stone-800 mb-3">
+                    Dwi Hasti Oktaviani, S.Pd
+                  </h2>
+
+                  <div className="inline-block bg-gradient-to-r from-rose-50 to-pink-50 rounded-2xl px-6 py-4 shadow-sm border border-rose-100/50">
+                    <p className="text-rose-500 font-medium mb-2">Putri dari</p>
+                    <p className="text-stone-700">
+                      Bapak <span className="font-semibold">Nurhasan</span>
+                    </p>
+                    <p className="text-stone-400 text-sm my-1">&</p>
+                    <p className="text-stone-700">
+                      Ibu <span className="font-semibold">Sri Maryati</span>
+                    </p>
+                  </div>
                 </div>
 
+                {/* Ampersand */}
                 <div
-                  data-aos="fade-left"
-                  data-aos-duration="2000"
-                  className="pb-1"
+                  className="relative py-4 md:py-0"
+                  data-aos="zoom-in"
+                  data-aos-duration="1000"
                 >
-                  <img
-                    src="/img/gallery-3.jpeg"
-                    alt="mempelai pria"
-                    className="w-40 h-40 object-cover rounded-full border-[3px] border-white shadow my-4 mx-auto cursor-pointer"
-                  />
-                  <h2 className="font-esthetic m-0 text-[2.125rem]">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-rose-400 to-amber-400 rounded-full blur-2xl opacity-20" />
+                    <div className="relative bg-gradient-to-br from-rose-100 to-amber-100 rounded-full p-6 md:p-8 shadow-lg border border-white">
+                      <span className="font-esthetic text-5xl md:text-6xl bg-gradient-to-br from-rose-500 to-amber-500 bg-clip-text text-transparent">
+                        &
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Decorative dots */}
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex gap-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-rose-300" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-pink-300" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-amber-300" />
+                  </div>
+                  <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex gap-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-amber-300" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-pink-300" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-rose-300" />
+                  </div>
+                </div>
+
+                {/* Groom */}
+                <div
+                  className="flex-1 text-center"
+                  data-aos="fade-left"
+                  data-aos-duration="1500"
+                >
+                  <div className="relative inline-block mb-6">
+                    {/* Decorative ring */}
+                    <div className="absolute inset-0 rounded-full border-2 border-dashed border-amber-200 animate-spin-slow" style={{ animationDuration: '20s', animationDirection: 'reverse' }} />
+                    <div className="absolute -inset-3 rounded-full border border-amber-100" />
+                    <div className="absolute -inset-6 rounded-full border border-amber-50" />
+
+                    {/* Photo */}
+                    <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-white shadow-xl shadow-amber-100/50">
+                      <Image
+                        src="/img/gallery-3.jpeg"
+                        alt="Mempelai Pria"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Corner hearts */}
+                    <div className="absolute -top-2 -left-2 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full p-2 shadow-lg">
+                      <HeartIcon className="text-white" size={16} />
+                    </div>
+                  </div>
+
+                  <h2 className="font-esthetic text-3xl md:text-4xl text-stone-800 mb-3">
                     Muhammad Said Agil
                   </h2>
-                  <p className="mt-3 mb-1 text-[1.25rem]">Bin</p>
-                  <p className="mb-0 text-[0.95rem]">Bapak Asmat</p>
-                  <p className="mb-0 text-[0.95rem]">dan</p>
-                  <p className="mb-0 text-[0.95rem]">Almh. Ibu Muharoh</p>
-                </div>
 
-                <div className="absolute top-[90%] left-[5%]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    fill="currentColor"
-                    className="opacity-50"
-                    data-time="2500"
-                    data-class="animate-love"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                  </svg>
+                  <div className="inline-block bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl px-6 py-4 shadow-sm border border-amber-100/50">
+                    <p className="text-amber-600 font-medium mb-2">Putra dari</p>
+                    <p className="text-stone-700">
+                      Bapak <span className="font-semibold">Asmat</span>
+                    </p>
+                    <p className="text-stone-400 text-sm my-1">&</p>
+                    <p className="text-stone-700">
+                      <span className="font-semibold">Almh. Ibu Muharoh</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </section>
+
+            {/* Quote Section */}
+            <div
+              className="max-w-2xl mx-auto mt-16 text-center"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+            >
+              <div className="relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-stone-100">
+                {/* Quote marks */}
+                <div className="absolute -top-4 left-8 text-6xl text-rose-200 font-serif leading-none">
+                  &ldquo;
+                </div>
+                <div className="absolute -bottom-8 right-8 text-6xl text-rose-200 font-serif leading-none rotate-180">
+                  &rdquo;
+                </div>
+
+                {/* Decorative corners */}
+                <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-rose-200 rounded-tl-3xl" />
+                <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-amber-200 rounded-tr-3xl" />
+                <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-amber-200 rounded-bl-3xl" />
+                <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-rose-200 rounded-br-3xl" />
+
+                <p className="relative z-10 text-stone-600 italic leading-relaxed text-lg md:text-xl px-4">
+                  {quote}
+                </p>
+
+                <div className="mt-6 inline-flex items-center gap-2">
+                  <div className="w-8 h-[1px] bg-gradient-to-r from-transparent to-stone-300" />
+                  <p className="text-stone-500 font-medium">{quoteFrom}</p>
+                  <div className="w-8 h-[1px] bg-gradient-to-l from-transparent to-stone-300" />
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom decorative */}
+            <div className="flex justify-center mt-12">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-rose-300" />
+                <div className="w-3 h-3 rounded-full bg-pink-400" />
+                <HeartIcon className="text-rose-400 mx-2" size={24} />
+                <div className="w-3 h-3 rounded-full bg-pink-400" />
+                <div className="w-2 h-2 rounded-full bg-rose-300" />
+              </div>
+            </div>
+          </div>
         </section>
-      ) : (
-        ""
-      )}
+      ) : null}
     </>
   );
 }

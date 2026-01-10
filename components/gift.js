@@ -40,13 +40,7 @@ export default function Gift() {
       name: "Dwi Hasti Oktaviani",
       rek: "706551214400",
       bank: "Bank Central Asia",
-      src: "/img/bca.png",
-    },
-    {
-      name: "Dwi Hasti Oktaviani",
-      rek: "089530200294",
-      bank: "GOPAY",
-      src: "/img/gopay.png",
+      src: "/img/cimb.png",
     },
   ];
 

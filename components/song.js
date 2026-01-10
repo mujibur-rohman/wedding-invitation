@@ -21,12 +21,7 @@ export default function Song() {
           )}
         </button>
       </div>
-      <audio
-        ref={songRef}
-        id="play-song"
-        src="/Amin Paling Serius.mp3"
-        loop
-      ></audio>
+      <audio ref={songRef} id="play-song" src="/song.mp3" loop></audio>
     </section>
   );
 }

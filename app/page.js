@@ -58,7 +58,7 @@ const data = {
       address:
         "Kp. Karang Tengah RT 03 RW 010, Desa Pusaka Rakyat, Kec. Tarumajaya, Kab. Bekasi, Jawa Barat 17214.",
       type: "female",
-      instagram: "https://www.instagram.com/_sayafannyaaa",
+      instagram: "https://www.instagram.com/user",
     },
     {
       full_name: "Muhammad Said Agil",
@@ -69,10 +69,10 @@ const data = {
       address:
         "Kp. Karang Tengah RT 03 RW 010, Desa Pusaka Rakyat, Kec. Tarumajaya, Kab. Bekasi, Jawa Barat 17214.",
       type: "male",
-      instagram: "https://www.instagram.com/anggasyahfutra",
+      instagram: "https://www.instagram.com/user",
     },
   ],
-  cover: "/img/gallery-2.jpeg",
+  cover: "/img/gallery-1.jpeg",
   weddingDate: "25-01-2026 09:00",
   imageList: [
     "/img/gallery-4.jpeg",
@@ -83,12 +83,16 @@ const data = {
     "/img/gallery-9.jpeg",
   ],
   galleryList: [
-    "/img/gallery-4.jpeg",
     "/img/gallery-5.jpeg",
     "/img/gallery-6.jpeg",
     "/img/gallery-7.jpeg",
     "/img/gallery-8.jpeg",
+    "/img/gallery-4.jpeg",
     "/img/gallery-9.jpeg",
+    "/img/gallery-10.jpeg",
+    "/img/gallery-11.jpeg",
+    "/img/gallery-12.jpeg",
+    "/img/gallery-13.jpeg",
   ],
   event: [
     {
@@ -110,21 +114,6 @@ const data = {
       maps_link: "https://maps.app.goo.gl/VQjmdXeA675wLqp17",
     },
   ],
-  streaming: {
-    status: false,
-    links: [
-      {
-        name: "youtube",
-        link: "https://youtube.com/",
-        icon: <PiYoutubeLogoThin className="text-xl" />,
-      },
-      {
-        name: "instagram",
-        link: "https://www.instagram.com/",
-        icon: <PiInstagramLogoThin className="text-xl" />,
-      },
-    ],
-  },
 };
 
 export default function Home() {
@@ -147,15 +136,13 @@ export default function Home() {
         />
 
         <Quote
-          shortNameFemale={data.family[0].nick_name}
-          shortNameMale={data.family[1].nick_name}
           quote={`"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tentram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."`}
           quoteFrom="QS. Ar-Rum : 21"
         />
         <Couple coupleData={data.family} />
         <section
           className="relative py-16 overflow-hidden bg-gradient-to-b from-white via-stone-50 to-white"
-          id="wedding-date"
+          id="event"
         >
           {/* Decorative background elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
