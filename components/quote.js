@@ -19,26 +19,124 @@ export default function Quote({
             src="/img/img-tree-shadow.png"
             alt=""
           />
-          <div className="container relative z-10 pt-16 mx-auto">
-            <h2 className="text-xl font-medium text-gray-700 uppercase lg:text-4xl md:text-3xl font-aston">
-              {shortNameFemale.charAt(0)}
-              <span className="text-3xl font-normal text-gray-500"> & </span>
-              {shortNameMale.charAt(0)}
+          <section className="bg-white-black text-center relative bg-cover bg-center">
+            <h2 className="font-arabic py-4 m-0 text-[2rem]">
+              بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
             </h2>
-            <div className="h-px m-auto mt-6 mb-10 bg-gray-700 w-36"></div>
-            <div
-              className="space-y-4 text-sm md:text-base lg:text-lg"
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-delay="0"
-              data-aos-easing="ease-in-out"
-            >
-              <p className="text-gray-700 ">{quote}</p>
-              <p className="text-base text-gray-700 md:text-lg lg:text-xl">
-                {quoteFrom}
-              </p>
+            <h2 className="font-esthetic py-4 m-0 text-[2rem]">
+              Assalamualaikum Warahmatullahi Wabarakatuh
+            </h2>
+            <p className="pb-4 px-2 m-0 text-[0.95rem]">
+              Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan
+              menghadiri acara pernikahan kami:
+            </p>
+
+            <div className="overflow-x-hidden pb-4">
+              <div className="relative">
+                <div className="absolute top-0 right-[5%]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    fill="currentColor"
+                    className="opacity-50"
+                    data-time="500"
+                    data-class="animate-love"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                  </svg>
+                </div>
+
+                <div
+                  data-aos="fade-right"
+                  data-aos-duration="2000"
+                  className="pb-1"
+                >
+                  <img
+                    src="/img/gallery-2.jpeg"
+                    alt="mempelai wanita"
+                    className="w-40 h-40 object-cover rounded-full border-[3px] border-white shadow my-4 mx-auto cursor-pointer"
+                  />
+                  <h2 className="font-esthetic m-0 text-[2.125rem]">
+                    Dwi Hasti Oktaviani, S.Pd
+                  </h2>
+                  <p className="mt-3 mb-1 text-[1.25rem]">Binti</p>
+                  <p className="mb-0 text-[0.95rem]">Bapak Nurhasan</p>
+                  <p className="mb-0 text-[0.95rem]">dan</p>
+                  <p className="mb-0 text-[0.95rem]">Sri Maryati</p>
+                </div>
+
+                <div className="absolute top-[90%] left-[5%]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    fill="currentColor"
+                    className="opacity-50"
+                    data-time="2000"
+                    data-class="animate-love"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                  </svg>
+                </div>
+              </div>
+
+              <h2 className="font-esthetic mt-4 text-[4.5rem]">&amp;</h2>
+
+              <div className="relative">
+                <div className="absolute top-0 right-[5%]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    fill="currentColor"
+                    className="opacity-50"
+                    data-time="3000"
+                    data-class="animate-love"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                  </svg>
+                </div>
+
+                <div
+                  data-aos="fade-left"
+                  data-aos-duration="2000"
+                  className="pb-1"
+                >
+                  <img
+                    src="/img/gallery-3.jpeg"
+                    alt="mempelai pria"
+                    className="w-40 h-40 object-cover rounded-full border-[3px] border-white shadow my-4 mx-auto cursor-pointer"
+                  />
+                  <h2 className="font-esthetic m-0 text-[2.125rem]">
+                    Muhammad Said Agil
+                  </h2>
+                  <p className="mt-3 mb-1 text-[1.25rem]">Bin</p>
+                  <p className="mb-0 text-[0.95rem]">Bapak Asmat</p>
+                  <p className="mb-0 text-[0.95rem]">dan</p>
+                  <p className="mb-0 text-[0.95rem]">Almh. Ibu Muharoh</p>
+                </div>
+
+                <div className="absolute top-[90%] left-[5%]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    fill="currentColor"
+                    className="opacity-50"
+                    data-time="2500"
+                    data-class="animate-love"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                  </svg>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
         </section>
       ) : (
         ""

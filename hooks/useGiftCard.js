@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+"use client";
 
-function useGiftCard() {
+import { useState } from "react";
+
+function useGiftCard(rek) {
   const [onCopy, setOnCopy] = useState(false);
 
   const handleClick = async () => {
-    setOnCopy(true);
-    navigator.clipboard.writeText(rek);
-    setTimeout(() => {
-      setOnCopy(false);
-    }, 1000);
+    try {
+      await navigator.clipboard.writeText(rek);
+      setOnCopy(true);
+      setTimeout(() => {
+        setOnCopy(false);
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
   };
+
   return { handleClick, onCopy };
 }
 
