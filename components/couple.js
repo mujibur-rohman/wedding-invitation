@@ -1,11 +1,14 @@
 "use client";
 
 import React from "react";
-import Lottie from "react-lottie";
+import dynamic from "next/dynamic";
 import animationData from "../public/birds";
 import { useThemeContext } from "./providers";
 import Link from "next/link";
 import { PiInstagramLogo } from "react-icons/pi";
+
+// Dynamic import Lottie to avoid SSR issues
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 const defaultOptions = {
   loop: true,

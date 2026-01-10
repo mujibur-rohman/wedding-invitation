@@ -499,89 +499,92 @@ export default function Home() {
         <Menu />
         <Song />
       </main>
-      <footer className="mb-14 sm:mb-0 bg-stone-700">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 900 80"
-          className="w-full"
-          version="1.1"
-        >
-          <path
-            d="M0 42L75 17L150 21L225 39L300 49L375 16L450 17L525 36L600 19L675 22L750 47L825 35L900 33L900 81L825 81L750 81L675 81L600 81L525 81L450 81L375 81L300 81L225 81L150 81L75 81L0 81Z"
-            fill="#57534e"
-          />
-          <path
-            d="M0 51L75 51L150 42L225 47L300 35L375 39L450 34L525 46L600 37L675 38L750 43L825 50L900 55L900 81L825 81L750 81L675 81L600 81L525 81L450 81L375 81L300 81L225 81L150 81L75 81L0 81Z"
-            fill="#403b38"
-          />
-          <path
-            d="M0 60L75 56L150 68L225 68L300 57L375 61L450 54L525 52L600 49L675 69L750 69L825 50L900 61L900 81L825 81L750 81L675 81L600 81L525 81L450 81L375 81L300 81L225 81L150 81L75 81L0 81Z"
-            fill="#292524"
-          />
-        </svg>
-        <div className="px-4 py-8 -mt-2 font-thin text-center capitalize text-stone-300 bg-stone-800">
-          <p>© made with love by Mujay</p>
+      <footer className="relative mb-14 sm:mb-0 bg-gradient-to-b from-stone-700 via-stone-800 to-stone-900 overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-rose-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl" />
+        </div>
+
+        {/* Main content */}
+        <div className="relative z-10 px-4 py-12">
+          {/* Wedding names */}
+          <div className="text-center mb-8">
+            <p className="text-stone-400 text-sm uppercase tracking-widest mb-2">
+              The Wedding Of
+            </p>
+            <h2 className="font-esthetic text-4xl md:text-5xl text-white mb-4">
+              Dwi & Said Agil
+            </h2>
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-16 h-[1px] bg-gradient-to-r from-transparent to-stone-500" />
+              <svg
+                className="w-5 h-5 text-rose-400"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+              <div className="w-16 h-[1px] bg-gradient-to-l from-transparent to-stone-500" />
+            </div>
+          </div>
+
+          {/* Date */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm rounded-full px-6 py-3 border border-white/10">
+              <svg
+                className="w-5 h-5 text-amber-400"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                />
+              </svg>
+              <span className="text-stone-300 text-sm">
+                Minggu, 25 Januari 2026
+              </span>
+            </div>
+          </div>
+
+          {/* Thank you message */}
+          <div className="text-center mb-8 max-w-md mx-auto">
+            <p className="text-stone-400 text-sm leading-relaxed">
+              Terima kasih atas doa dan restu yang telah diberikan. Kehadiran
+              Anda adalah hadiah terindah bagi kami.
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <div className="w-2 h-2 rounded-full bg-rose-400/50" />
+            <div className="w-3 h-3 rounded-full bg-pink-400/50" />
+            <div className="w-2 h-2 rounded-full bg-amber-400/50" />
+          </div>
+
+          {/* Copyright */}
+          <div className="text-center">
+            <p className="text-stone-500 text-xs">
+              Made with{" "}
+              <svg
+                className="w-4 h-4 inline text-rose-400 mx-1"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>{" "}
+              by Mujay
+            </p>
+            <p className="text-stone-600 text-xs mt-1">
+              © 2026 All Rights Reserved
+            </p>
+          </div>
         </div>
       </footer>
     </>
   );
 }
-
-// export default function Home() {
-//   return (
-//     <>
-//       <main className="flex flex-col flex-wrap flex-1">
-//         <Suspense>
-//           <Cover
-//             shortNameFemale={data.family[0].nick_name}
-//             shortNameMale={data.family[1].nick_name}
-//             src={data.cover}
-//           />
-//         </Suspense>
-//         <Hero
-//           imageList={data.imageList}
-//           weddingDate={data.weddingDate}
-//           shortNameFemale={data.family[0].nick_name}
-//           shortNameMale={data.family[1].nick_name}
-//         />
-//         <Quote
-//           shortNameFemale={data.family[0].nick_name}
-//           shortNameMale={data.family[1].nick_name}
-//           quote="“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tentram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.”"
-//           quoteFrom="QS. Ar-Rum : 21"
-//         />
-//         <Couple coupleData={data.family} />
-//         <Event listEvent={data.event} streaming={data.streaming} />
-//         <Gallery imageList={data.galleryList} />
-//         <Comments />
-//         <Gift />
-//         <Menu />
-//         <Song />
-//       </main>
-//       <footer className="mb-14 sm:mb-0 bg-stone-700">
-//         <svg
-//           xmlns="http://www.w3.org/2000/svg"
-//           viewBox="0 0 900 80"
-//           className="w-full"
-//           version="1.1"
-//         >
-//           <path
-//             d="M0 42L75 17L150 21L225 39L300 49L375 16L450 17L525 36L600 19L675 22L750 47L825 35L900 33L900 81L825 81L750 81L675 81L600 81L525 81L450 81L375 81L300 81L225 81L150 81L75 81L0 81Z"
-//             fill="#57534e"
-//           />
-//           <path
-//             d="M0 51L75 51L150 42L225 47L300 35L375 39L450 34L525 46L600 37L675 38L750 43L825 50L900 55L900 81L825 81L750 81L675 81L600 81L525 81L450 81L375 81L300 81L225 81L150 81L75 81L0 81Z"
-//             fill="#403b38"
-//           />
-//           <path
-//             d="M0 60L75 56L150 68L225 68L300 57L375 61L450 54L525 52L600 49L675 69L750 69L825 50L900 61L900 81L825 81L750 81L675 81L600 81L525 81L450 81L375 81L300 81L225 81L150 81L75 81L0 81Z"
-//             fill="#292524"
-//           />
-//         </svg>
-//         <div className="px-4 py-8 -mt-2 font-thin text-center capitalize text-stone-300 bg-stone-800">
-//           <p>© made with love by sukundev</p>
-//         </div>
-//       </footer>
-//     </>
-//   );
-// }

@@ -33,7 +33,7 @@ const newyork = localFont({
 });
 
 export const metadata = {
-  title: `The Wedding Of Fanny & Angga`,
+  title: `The Wedding Of Dwi & Said Agil`,
   description: `Sabtu, 27 April 2024`,
 };
 

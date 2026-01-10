@@ -1,4 +1,4 @@
-# Undangan Fanny dan Angga
+# Undangan Said dan Dwi
 
 Template undangan online ini dibuat menggunakan **Next.js** dan di-deploy di **Vercel** dengan **PostgreSQL** sebagai database.
 
@@ -19,20 +19,15 @@ Template undangan online ini dibuat menggunakan **Next.js** dan di-deploy di **V
 
 ## Cara Menjalankan Secara Lokal
 
-1. Clone repository:
-   ```sh
-   git clone https://github.com/SukunDev/undangan-fanny-angga.git
-   cd undangan-fanny-angga
-   ```
-2. Install dependencies:
+1. Install dependencies:
    ```sh
    npm install
    ```
-3. Buat file **.env** dan tambahkan konfigurasi database PostgreSQL:
+2. Buat file **.env** dan tambahkan konfigurasi database PostgreSQL:
    ```env
    DATABASE_URL=postgresql://username:password@localhost:5432/undangan_db
    ```
-4. Jalankan server lokal:
+3. Jalankan server lokal:
    ```sh
    npm run dev
    ```
@@ -63,4 +58,4 @@ Proyek ini menggunakan lisensi MIT.
 
 ---
 
-Dibuat dengan ❤️ oleh SukunDev untuk Fanny & Angga.
+Dibuat dengan ❤️ oleh Mujay untuk Dwi & Said.

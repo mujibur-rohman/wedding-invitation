@@ -9,7 +9,7 @@ export default function Song() {
 
   return (
     <section>
-      <div className="fixed inset-y-0 my-auto left-2 lg:left-4 h-fit z-[998]">
+      <div className="fixed bottom-28 right-5 lg:left-4 h-fit z-[998]">
         <button
           onClick={handlePauseButton}
           className="relative p-2 bg-gray-200 rounded-full border-stone-700"
