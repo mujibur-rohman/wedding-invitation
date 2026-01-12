@@ -11,7 +11,9 @@ import Song from "@/components/song";
 import { Suspense } from "react";
 
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://localhost:3000"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL || "https://localhost:3000"
+  ),
   alternates: {
     canonical: "/",
   },
@@ -34,7 +36,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/img/gallery-1.jpeg",
         width: 1200,
         height: 630,
         alt: "The Wedding Of Dwi & Said Agil",
