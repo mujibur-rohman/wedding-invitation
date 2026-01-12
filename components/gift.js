@@ -2,12 +2,26 @@
 
 import GiftCard from "@/components/giftCard";
 import React from "react";
-import { PiGiftLight, PiHeartFill } from "react-icons/pi";
+import { PiGiftLight, PiHeartFill, PiMapPinFill, PiCopySimpleLight, PiCheckCircleFill } from "react-icons/pi";
 import { motion, AnimatePresence } from "framer-motion";
 import useGift from "@/hooks/useGift";
 
 export default function Gift() {
   const { buttonClickedHandler, isButtonClicked } = useGift();
+  const [addressCopied, setAddressCopied] = React.useState(false);
+
+  const addressData = {
+    name: "Dwi Hasti Oktaviani / Muhammad Said Agil",
+    address: "Kp. Karang Tengah RT 03 RW 010, Desa Pusaka Rakyat, Kec. Tarumajaya, Kab. Bekasi, Jawa Barat 17214",
+    phone: "089530200294",
+  };
+
+  const handleCopyAddress = () => {
+    const fullAddress = `${addressData.name}\n${addressData.address}\nNo. HP: ${addressData.phone}`;
+    navigator.clipboard.writeText(fullAddress);
+    setAddressCopied(true);
+    setTimeout(() => setAddressCopied(false), 2000);
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 30, scale: 0.95 },
@@ -125,6 +139,74 @@ export default function Gift() {
                   </motion.div>
                 ))}
               </div>
+
+              {/* Address Card for Physical Gift */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="mt-4"
+              >
+                <div className="relative overflow-hidden bg-[#1a1a1a]/95 backdrop-blur-sm rounded-2xl shadow-lg border border-stone-700/50 max-w-lg mx-auto">
+                  {/* Decorative elements */}
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-emerald-900/30 to-teal-900/20 rounded-full opacity-60" />
+                  <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-tr from-green-900/30 to-emerald-900/20 rounded-full opacity-60" />
+
+                  {/* Header */}
+                  <div className="relative z-10 pt-6 pb-4 px-6 text-center border-b border-stone-700/50">
+                    <div className="inline-flex items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full p-3 mb-3 shadow-lg shadow-emerald-500/30">
+                      <PiMapPinFill className="text-2xl text-white" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-stone-100">Kirim Kado</h3>
+                    <p className="text-xs text-stone-400 mt-1">Alamat pengiriman hadiah fisik</p>
+                  </div>
+
+                  {/* Address details */}
+                  <div className="relative z-10 px-6 py-5">
+                    <div className="bg-gradient-to-r from-[#252525] to-[#2a2a2a] rounded-xl p-4 mb-4 border border-stone-700/30">
+                      <div className="space-y-3">
+                        <div>
+                          <p className="text-xs text-stone-500 mb-1">Penerima</p>
+                          <p className="text-stone-200 font-medium">{addressData.name}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-stone-500 mb-1">Alamat</p>
+                          <p className="text-stone-300 text-sm leading-relaxed">{addressData.address}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-stone-500 mb-1">No. HP</p>
+                          <p className="text-stone-200 font-medium">{addressData.phone}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Copy button */}
+                    <button
+                      onClick={handleCopyAddress}
+                      className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium transition-all duration-300 ${
+                        addressCopied
+                          ? "bg-green-600 text-white shadow-lg shadow-green-600/30"
+                          : "bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:from-emerald-500 hover:to-teal-500 shadow-lg shadow-emerald-900/30 hover:shadow-emerald-800/40"
+                      }`}
+                    >
+                      {addressCopied ? (
+                        <>
+                          <PiCheckCircleFill className="text-xl" />
+                          <span>Alamat Tersalin!</span>
+                        </>
+                      ) : (
+                        <>
+                          <PiCopySimpleLight className="text-xl" />
+                          <span>Salin Alamat</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+
+                  {/* Bottom decorative line */}
+                  <div className="h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-green-500" />
+                </div>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
