@@ -60,7 +60,7 @@ export default function Cover({ src, shortNameFemale, shortNameMale }) {
             data-aos-duration="2000"
             data-aos-offset="0"
             onClick={handleOpenButton}
-            className="flex items-center gap-1 px-4 py-2 mx-auto mt-10 capitalize bg-white rounded-md w-fit animate-scale"
+            className="flex items-center text-black gap-1 px-4 py-2 mx-auto mt-10 capitalize bg-white rounded-md w-fit animate-scale"
           >
             <PiEnvelopeLight className="text-lg md:text-xl" />
             buka undangan

@@ -55,7 +55,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: "#ffffff",
+  themeColor: "#0f0f0f",
 };
 
 const data = {
@@ -152,21 +152,21 @@ export default function Home() {
         />
         <Couple coupleData={data.family} />
         <section
-          className="relative py-16 overflow-hidden bg-gradient-to-b from-white via-stone-50 to-white"
+          className="relative py-16 overflow-hidden bg-gradient-to-b from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f]"
           id="event"
         >
           {/* Decorative background elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-5 w-48 h-48 bg-rose-100 rounded-full blur-3xl opacity-30" />
-            <div className="absolute bottom-10 right-5 w-56 h-56 bg-amber-100 rounded-full blur-3xl opacity-30" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-pink-50 rounded-full blur-3xl opacity-20" />
+            <div className="absolute top-10 left-5 w-48 h-48 bg-rose-900/30 rounded-full blur-3xl opacity-30" />
+            <div className="absolute bottom-10 right-5 w-56 h-56 bg-amber-900/30 rounded-full blur-3xl opacity-30" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-pink-900/20 rounded-full blur-3xl opacity-20" />
           </div>
 
           <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
             {/* Header */}
             <div className="mb-10">
               <div className="inline-flex items-center justify-center gap-2 mb-4">
-                <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-stone-400" />
+                <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-stone-500" />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -177,14 +177,14 @@ export default function Home() {
                 >
                   <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
                 </svg>
-                <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-stone-400" />
+                <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-stone-500" />
               </div>
 
-              <h2 className="font-esthetic text-4xl md:text-5xl text-stone-800 mb-4">
+              <h2 className="font-esthetic text-4xl md:text-5xl text-stone-100 mb-4">
                 Moment Bahagia
               </h2>
 
-              <p className="text-stone-600 max-w-md mx-auto leading-relaxed">
+              <p className="text-stone-400 max-w-md mx-auto leading-relaxed">
                 Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta&apos;ala,
                 insyaAllah kami akan menyelenggarakan acara:
               </p>
@@ -199,13 +199,13 @@ export default function Home() {
                 data-aos-duration="1500"
               >
                 {/* Main Card */}
-                <div className="relative bg-gradient-to-br from-white via-white to-rose-50 rounded-3xl border border-rose-100/50 p-8 hover:-translate-y-1 transition-all duration-500">
+                <div className="relative bg-gradient-to-br from-[#1a1a1a] via-[#1f1f1f] to-[#252525] rounded-3xl border border-rose-900/30 p-8 hover:-translate-y-1 transition-all duration-500">
                   {/* Decorative patterns */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-rose-100/40 to-transparent rounded-bl-full" />
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-pink-100/40 to-transparent rounded-tr-full" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-rose-900/20 to-transparent rounded-bl-full" />
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-pink-900/20 to-transparent rounded-tr-full" />
                   <div className="absolute top-4 left-4">
                     <svg
-                      className="w-6 h-6 text-rose-200"
+                      className="w-6 h-6 text-rose-700/50"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -214,7 +214,7 @@ export default function Home() {
                   </div>
                   <div className="absolute top-8 right-8">
                     <svg
-                      className="w-4 h-4 text-rose-200"
+                      className="w-4 h-4 text-rose-700/50"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -223,7 +223,7 @@ export default function Home() {
                   </div>
 
                   {/* Icon */}
-                  <div className="relative z-10 w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-rose-400 to-pink-500 rounded-2xl rotate-3 shadow-rose-500/30 flex items-center justify-center group-hover:rotate-6 transition-transform duration-500">
+                  <div className="relative z-10 w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-rose-500 to-pink-600 rounded-2xl rotate-3 shadow-lg shadow-rose-500/30 flex items-center justify-center group-hover:rotate-6 transition-transform duration-500">
                     <svg
                       className="w-10 h-10 text-white -rotate-3 group-hover:-rotate-6 transition-transform duration-500"
                       fill="none"
@@ -245,14 +245,14 @@ export default function Home() {
                       Minggu, 25 Januari 2026
                     </span>
 
-                    <h3 className="font-esthetic text-4xl text-stone-800 mb-4">
+                    <h3 className="font-esthetic text-4xl text-stone-100 mb-4">
                       Akad Nikah
                     </h3>
 
-                    <div className="flex items-center justify-center gap-3 bg-rose-50 rounded-xl py-3 px-4">
-                      <div className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center">
+                    <div className="flex items-center justify-center gap-3 bg-rose-900/30 rounded-xl py-3 px-4">
+                      <div className="w-10 h-10 bg-[#252525] rounded-full shadow-sm flex items-center justify-center">
                         <svg
-                          className="w-5 h-5 text-rose-500"
+                          className="w-5 h-5 text-rose-400"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -269,7 +269,7 @@ export default function Home() {
                         <p className="text-xs text-rose-400 font-medium">
                           Waktu
                         </p>
-                        <p className="text-stone-700 font-semibold">
+                        <p className="text-stone-200 font-semibold">
                           09.00 - 10.00 WIB
                         </p>
                       </div>
@@ -285,13 +285,13 @@ export default function Home() {
                 data-aos-duration="1500"
               >
                 {/* Main Card */}
-                <div className="relative bg-gradient-to-br from-white via-white to-amber-50 rounded-3xl border border-amber-100/50 p-8 hover:-translate-y-1 transition-all duration-500">
+                <div className="relative bg-gradient-to-br from-[#1a1a1a] via-[#1f1f1f] to-[#252525] rounded-3xl border border-amber-900/30 p-8 hover:-translate-y-1 transition-all duration-500">
                   {/* Decorative patterns */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-amber-100/40 to-transparent rounded-bl-full" />
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-orange-100/40 to-transparent rounded-tr-full" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-amber-900/20 to-transparent rounded-bl-full" />
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-orange-900/20 to-transparent rounded-tr-full" />
                   <div className="absolute top-4 left-4">
                     <svg
-                      className="w-6 h-6 text-amber-200"
+                      className="w-6 h-6 text-amber-700/50"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -300,7 +300,7 @@ export default function Home() {
                   </div>
                   <div className="absolute top-8 right-8">
                     <svg
-                      className="w-4 h-4 text-amber-200"
+                      className="w-4 h-4 text-amber-700/50"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -309,7 +309,7 @@ export default function Home() {
                   </div>
 
                   {/* Icon */}
-                  <div className="relative z-10 w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl -rotate-3 shadow-amber-500/30 flex items-center justify-center group-hover:-rotate-6 transition-transform duration-500">
+                  <div className="relative z-10 w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl -rotate-3 shadow-lg shadow-amber-500/30 flex items-center justify-center group-hover:-rotate-6 transition-transform duration-500">
                     <svg
                       className="w-10 h-10 text-white rotate-3 group-hover:rotate-6 transition-transform duration-500"
                       fill="none"
@@ -331,14 +331,14 @@ export default function Home() {
                       Minggu, 25 Januari 2026
                     </span>
 
-                    <h3 className="font-esthetic text-4xl text-stone-800 mb-4">
+                    <h3 className="font-esthetic text-4xl text-stone-100 mb-4">
                       Resepsi
                     </h3>
 
-                    <div className="flex items-center justify-center gap-3 bg-amber-50 rounded-xl py-3 px-4">
-                      <div className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center">
+                    <div className="flex items-center justify-center gap-3 bg-amber-900/30 rounded-xl py-3 px-4">
+                      <div className="w-10 h-10 bg-[#252525] rounded-full shadow-sm flex items-center justify-center">
                         <svg
-                          className="w-5 h-5 text-amber-500"
+                          className="w-5 h-5 text-amber-400"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -355,7 +355,7 @@ export default function Home() {
                         <p className="text-xs text-amber-400 font-medium">
                           Waktu
                         </p>
-                        <p className="text-stone-700 font-semibold">
+                        <p className="text-stone-200 font-semibold">
                           10.00 WIB - Selesai
                         </p>
                       </div>
@@ -367,16 +367,16 @@ export default function Home() {
 
             {/* Location Card */}
             <div
-              className="relative overflow-hidden bg-gradient-to-br from-white via-stone-50 to-stone-100 rounded-3xl shadow-xl border border-stone-200/50 p-8 max-w-xl mx-auto"
+              className="relative overflow-hidden bg-gradient-to-br from-[#1a1a1a] via-[#1f1f1f] to-[#252525] rounded-3xl shadow-xl border border-stone-700/50 p-8 max-w-xl mx-auto"
               data-aos="fade-up"
               data-aos-duration="1500"
             >
               {/* Decorative elements */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-bl from-rose-100 to-transparent rounded-full opacity-60" />
-              <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-tr from-amber-100 to-transparent rounded-full opacity-60" />
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-bl from-rose-900/30 to-transparent rounded-full opacity-60" />
+              <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-tr from-amber-900/30 to-transparent rounded-full opacity-60" />
               <div className="absolute top-4 right-4">
                 <svg
-                  className="w-5 h-5 text-stone-200"
+                  className="w-5 h-5 text-stone-600"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -385,7 +385,7 @@ export default function Home() {
               </div>
 
               {/* Icon */}
-              <div className="relative z-10 w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-stone-600 to-stone-800 rounded-2xl shadow-stone-500/30 flex items-center justify-center">
+              <div className="relative z-10 w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-stone-500 to-stone-700 rounded-2xl shadow-lg shadow-stone-500/30 flex items-center justify-center">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -407,12 +407,12 @@ export default function Home() {
               </div>
 
               <div className="relative z-10 text-center">
-                <h4 className="font-esthetic text-2xl text-stone-800 mb-3">
+                <h4 className="font-esthetic text-2xl text-stone-100 mb-3">
                   Lokasi Acara
                 </h4>
 
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 mb-5 shadow-sm">
-                  <p className="text-stone-600 text-sm leading-relaxed">
+                <div className="bg-[#252525]/80 backdrop-blur-sm rounded-xl p-4 mb-5 shadow-sm border border-stone-700/30">
+                  <p className="text-stone-400 text-sm leading-relaxed">
                     Kp. Karang Tengah RT 03 RW 010, Desa Pusaka Rakyat, Kec.
                     Tarumajaya, Kab. Bekasi, Jawa Barat 17214
                   </p>
@@ -446,10 +446,10 @@ export default function Home() {
 
         <Gift />
         <Gallery imageList={data.galleryList} />
-        <section className="pt-2 pb-4">
+        <section className="pt-2 pb-4 bg-[#0f0f0f]">
           <div className="max-w-3xl mx-auto px-4">
-            <div className="rounded-3xl shadow-lg p-4">
-              <h2 className="font-esthetic text-center py-2 mb-2 text-4xl">
+            <div className="rounded-3xl shadow-lg p-4 bg-[#1a1a1a] border border-stone-800">
+              <h2 className="font-esthetic text-center py-2 mb-2 text-4xl text-stone-100">
                 Kisah Cinta
               </h2>
 
@@ -464,10 +464,10 @@ export default function Home() {
                 <div className="overflow-y-scroll overflow-x-hidden p-2 with-scrollbar h-60">
                   <div className="flex">
                     <div className="flex-none relative">
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 border-l-2 border-stone-400 h-full z-0"></div>
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 border-l-2 border-stone-600 h-full z-0"></div>
                     </div>
                     <div className="flex-1 mt-1 mb-3 pl-3">
-                      <p className="text-sm">
+                      <p className="text-sm text-stone-300">
                         &quot;Orang bilang, kalau cari jodoh itu harus usaha
                         sampai ke ujung dunia. Tapi buat kami, Dwi & Said,
                         semesta sepertinya sedang ingin bercanda sambil berhemat

@@ -8,28 +8,19 @@ import Link from "next/link";
 import { PiInstagramLogo } from "react-icons/pi";
 
 // Dynamic import Lottie to avoid SSR issues
-const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: animationData,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
-};
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 function Couple({ coupleData }) {
   const { data } = useThemeContext();
   return (
     <>
       {data.isOpenned ? (
-        <section id="couple" className="relative mt-16 text-center capitalize">
+        <section id="couple" className="relative mt-16 text-center capitalize bg-[#0f0f0f]">
           {coupleData.length > 0
             ? coupleData.map((item, idx) => (
                 <div key={idx}>
                   <div className="absolute">
-                    <Lottie options={defaultOptions} />
+                    <Lottie animationData={animationData} loop={true} />
                   </div>
                   <div className="container relative mx-auto">
                     <div
@@ -40,7 +31,7 @@ function Couple({ coupleData }) {
                       }
                     >
                       <div
-                        className="w-2/4 md:w-2/5 p-4 mx-auto bg-white border rounded-md shadow-[10px_5px_10px_2px_rgb(0,0,0,0.2)] relative z-50"
+                        className="w-2/4 md:w-2/5 p-4 mx-auto bg-[#1a1a1a] border border-stone-700 rounded-md shadow-[10px_5px_10px_2px_rgb(0,0,0,0.4)] relative z-50"
                         data-aos="fade-up"
                         data-aos-delay={(idx + 1) * 100}
                       >
@@ -55,7 +46,7 @@ function Couple({ coupleData }) {
                           data-aos="fade-down"
                           data-aos-delay={(idx + 1) * 0}
                           data-aos-duration="2000"
-                          className="text-lg text-gray-700 md:text-xl lg:text-2xl font-adelia"
+                          className="text-lg text-stone-200 md:text-xl lg:text-2xl font-adelia"
                         >
                           {item.full_name}
                         </h3>
@@ -63,10 +54,10 @@ function Couple({ coupleData }) {
                           data-aos="fade-down"
                           data-aos-delay={(idx + 1) * 200}
                         >
-                          <p className="text-sm md:text-base lg:text-lg">
+                          <p className="text-sm text-stone-400 md:text-base lg:text-lg">
                             {item.type === "female" ? "putri" : "putra"} dari
                           </p>
-                          <p className="text-base md:text-lg lg:text-xl">
+                          <p className="text-base text-stone-300 md:text-lg lg:text-xl">
                             bapak {item.father_name} dan ibu {item.mother_name}
                           </p>
                         </div>
@@ -85,7 +76,7 @@ function Couple({ coupleData }) {
                         data-aos="zoom-in-down"
                         data-aos-delay="400"
                         data-aos-duration="2000"
-                        className="my-12 text-2xl text-gray-700 md:my-24 md:text-4xl lg:text-5xl font-aston"
+                        className="my-12 text-2xl text-stone-300 md:my-24 md:text-4xl lg:text-5xl font-aston"
                       >
                         -&-
                       </p>

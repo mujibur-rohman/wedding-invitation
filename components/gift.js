@@ -53,29 +53,29 @@ export default function Gift() {
   return (
     <section
       id="gift"
-      className="relative py-16 overflow-hidden bg-gradient-to-b from-stone-100 via-white to-stone-100"
+      className="relative py-16 overflow-hidden bg-gradient-to-b from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f]"
     >
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-rose-100 rounded-full blur-3xl opacity-40" />
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-amber-100 rounded-full blur-3xl opacity-40" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-50 rounded-full blur-3xl opacity-30" />
+        <div className="absolute top-20 left-10 w-64 h-64 bg-rose-900/30 rounded-full blur-3xl opacity-40" />
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-amber-900/30 rounded-full blur-3xl opacity-40" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-900/20 rounded-full blur-3xl opacity-30" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
           <div className="inline-flex items-center justify-center gap-2 mb-4">
-            <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-stone-400" />
+            <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-stone-500" />
             <PiHeartFill className="text-rose-400 text-xl" />
-            <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-stone-400" />
+            <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-stone-500" />
           </div>
 
-          <h2 className="font-esthetic text-4xl md:text-5xl text-stone-800 mb-4">
+          <h2 className="font-esthetic text-4xl md:text-5xl text-stone-100 mb-4">
             Love Gift
           </h2>
 
-          <p className="text-stone-600 max-w-md mx-auto leading-relaxed">
+          <p className="text-stone-400 max-w-md mx-auto leading-relaxed">
             Doa restu Anda merupakan karunia yang sangat berarti bagi kami.
             Namun jika memberi adalah ungkapan tanda kasih Anda, Anda dapat
             memberi kado melalui:
@@ -88,7 +88,7 @@ export default function Gift() {
             onClick={buttonClickedHandler}
             className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-medium text-lg transition-all duration-500 shadow-lg ${
               isButtonClicked
-                ? "bg-stone-800 text-white shadow-stone-500/30"
+                ? "bg-stone-700 text-stone-200 shadow-stone-900/30 border border-stone-600"
                 : "bg-gradient-to-r from-rose-500 to-pink-500 text-white hover:from-rose-600 hover:to-pink-600 shadow-rose-500/30 hover:shadow-rose-500/40 hover:scale-105"
             }`}
           >
@@ -130,17 +130,17 @@ export default function Gift() {
         </AnimatePresence>
 
         {/* Footer message */}
-        <div className="text-center mt-8 pt-8 border-t border-stone-200">
+        <div className="text-center mt-8 pt-8 border-t border-stone-700">
           <p className="text-stone-500 text-sm leading-relaxed max-w-md mx-auto">
             Kehadiran dan doa restu Anda sudah menjadi hadiah terindah bagi
             kami. Terima kasih atas perhatian dan kasih sayang Anda.
           </p>
 
           <div className="mt-8">
-            <p className="text-stone-400 text-sm uppercase tracking-widest mb-2">
+            <p className="text-stone-500 text-sm uppercase tracking-widest mb-2">
               The Wedding Of
             </p>
-            <h3 className="font-esthetic text-3xl md:text-4xl text-stone-700">
+            <h3 className="font-esthetic text-3xl md:text-4xl text-stone-200">
               Dwi & Said Agil
             </h3>
           </div>
