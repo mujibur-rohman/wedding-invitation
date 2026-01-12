@@ -12,7 +12,7 @@ import { Suspense } from "react";
 
 export const metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || "https://localhost:3000"
+    process.env.NEXT_PUBLIC_APP_URL || "https://fanny-and-angga.vercel.app"
   ),
   alternates: {
     canonical: "/",
@@ -36,7 +36,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/img/gallery-1.jpeg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "The Wedding Of Dwi & Said Agil",
