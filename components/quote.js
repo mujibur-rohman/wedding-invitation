@@ -97,7 +97,11 @@ export default function Quote({ quote, quoteFrom }) {
 
           <div className="relative z-10 py-16 px-4">
             {/* Bismillah Section */}
-            <div className="text-center mb-12" data-aos="fade-down" data-aos-duration="1000">
+            <div
+              className="text-center mb-12"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            >
               <div className="inline-flex items-center justify-center gap-3 mb-6">
                 <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-stone-600 to-stone-500" />
                 <HeartIcon className="text-rose-400" size={20} />
@@ -129,7 +133,10 @@ export default function Quote({ quote, quoteFrom }) {
                 >
                   <div className="relative inline-block mb-6">
                     {/* Decorative ring */}
-                    <div className="absolute inset-0 rounded-full border-2 border-dashed border-rose-700/50 animate-spin-slow" style={{ animationDuration: '20s' }} />
+                    <div
+                      className="absolute inset-0 rounded-full border-2 border-dashed border-rose-700/50 animate-spin-slow"
+                      style={{ animationDuration: "20s" }}
+                    />
                     <div className="absolute -inset-3 rounded-full border border-rose-800/30" />
                     <div className="absolute -inset-6 rounded-full border border-rose-900/20" />
 
@@ -201,7 +208,13 @@ export default function Quote({ quote, quoteFrom }) {
                 >
                   <div className="relative inline-block mb-6">
                     {/* Decorative ring */}
-                    <div className="absolute inset-0 rounded-full border-2 border-dashed border-amber-700/50 animate-spin-slow" style={{ animationDuration: '20s', animationDirection: 'reverse' }} />
+                    <div
+                      className="absolute inset-0 rounded-full border-2 border-dashed border-amber-700/50 animate-spin-slow"
+                      style={{
+                        animationDuration: "20s",
+                        animationDirection: "reverse",
+                      }}
+                    />
                     <div className="absolute -inset-3 rounded-full border border-amber-800/30" />
                     <div className="absolute -inset-6 rounded-full border border-amber-900/20" />
 
@@ -226,7 +239,9 @@ export default function Quote({ quote, quoteFrom }) {
                   </h2>
 
                   <div className="inline-block bg-gradient-to-r from-amber-900/30 to-orange-900/30 rounded-2xl px-6 py-4 shadow-sm border border-amber-800/30">
-                    <p className="text-amber-400 font-medium mb-2">Putra dari</p>
+                    <p className="text-amber-400 font-medium mb-2">
+                      Putra dari
+                    </p>
                     <p className="text-stone-300">
                       Bapak <span className="font-semibold">Asmat</span>
                     </p>
@@ -235,39 +250,6 @@ export default function Quote({ quote, quoteFrom }) {
                       <span className="font-semibold">Almh. Ibu Muharoh</span>
                     </p>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Quote Section */}
-            <div
-              className="max-w-2xl mx-auto mt-16 text-center"
-              data-aos="fade-up"
-              data-aos-duration="1500"
-            >
-              <div className="relative bg-[#1a1a1a]/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-stone-700">
-                {/* Quote marks */}
-                <div className="absolute -top-4 left-8 text-6xl text-rose-700/50 font-serif leading-none">
-                  &ldquo;
-                </div>
-                <div className="absolute -bottom-8 right-8 text-6xl text-rose-700/50 font-serif leading-none rotate-180">
-                  &rdquo;
-                </div>
-
-                {/* Decorative corners */}
-                <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-rose-800/50 rounded-tl-3xl" />
-                <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-amber-800/50 rounded-tr-3xl" />
-                <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-amber-800/50 rounded-bl-3xl" />
-                <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-rose-800/50 rounded-br-3xl" />
-
-                <p className="relative z-10 text-stone-300 italic leading-relaxed text-lg md:text-xl px-4">
-                  {quote}
-                </p>
-
-                <div className="mt-6 inline-flex items-center gap-2">
-                  <div className="w-8 h-[1px] bg-gradient-to-r from-transparent to-stone-600" />
-                  <p className="text-stone-400 font-medium">{quoteFrom}</p>
-                  <div className="w-8 h-[1px] bg-gradient-to-l from-transparent to-stone-600" />
                 </div>
               </div>
             </div>

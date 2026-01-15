@@ -150,9 +150,9 @@ export default function Home() {
           quote={`"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tentram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."`}
           quoteFrom="QS. Ar-Rum : 21"
         />
-        <Couple coupleData={data.family} />
+        {/* <Couple coupleData={data.family} /> */}
         <section
-          className="relative py-16 overflow-hidden bg-gradient-to-b from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f]"
+          className="rxelative py-16 overflow-hidden bg-gradient-to-b from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f]"
           id="event"
         >
           {/* Decorative background elements */}
